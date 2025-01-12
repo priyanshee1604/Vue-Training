@@ -1,15 +1,12 @@
 <template>
-  <div>
-    <HelloWorld/>
-  </div>
+      <RouterLink to="/login">Go to Login</RouterLink>
+      <RouterLink to="/register">Go to Register</RouterLink>
+      <RouterView/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 
 export default{
-  components: {
-    HelloWorld
-  }
+  name: 'App',
 }
 </script>
