@@ -4,13 +4,15 @@
  -->
 <template>
    <div>HOME PAGE</div>
-   <router-link to="/category">Category</router-link><br>
-   <!-- <router-link to="#">Products</router-link> -->
+   <router-link to="/category">Category</router-link>
+   <router-link to="/product/:id">Product details</router-link>
    <router-view/>
 </template>
 
+
 <script>
+
 export default ({
-   name: 'HomePage'
+   name: 'HomePage',
 })
 </script>

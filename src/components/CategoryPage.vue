@@ -5,12 +5,15 @@
 
  <!-- Add features to sort and filter out products based upon price, color or any other field on the category page -->
 <template>
+
     <p>Sort Products:</p>
     <select v-model="sortby" @change="sortingProduct">
         <option value="price">Price</option>
         <option value="rating">Rating</option>
     </select>
     <br><br>
+
+
     <p> Filter products based on Brands</p>
     <input type="radio" name="brand" value="Apple" v-model="selectedBrand" @change="filterByBrand">Apple
     <input type="radio" name="brand" value="Samsung" v-model="selectedBrand" @change="filterByBrand">Samsung
@@ -18,10 +21,13 @@
     <input type="radio" name="brand" value="Realme" v-model="selectedBrand" @change="filterByBrand">Realme
     <input type="radio" name="brand" value="Oppo" v-model="selectedBrand" @change="filterByBrand">Oppo
     <br><br>
+
+
     <div>Products according to the category.</div>
     <ol>
         <li v-for="product in products" v-bind:key="product.id">{{ product }}</li>
     </ol>
+    
 </template>
 
 <script>
@@ -64,6 +70,6 @@ import axios from 'axios';
         
 
     }
-    }
+}
 
 </script>
