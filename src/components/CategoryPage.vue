@@ -5,7 +5,7 @@
 <template>
     <div>Products according to the category.</div><br>
     <ol>
-        <li v-for="product in products[0]" v-bind:key="product.id">{{ product }}</li>
+        <li v-for="product in products" v-bind:key="product.id">{{ product }}</li>
     </ol>
 </template>
 
@@ -14,7 +14,6 @@ import axios from 'axios';
     export default{
         data(){
             return{
-                res: [],
                 products: []
             };
         },
@@ -22,8 +21,7 @@ import axios from 'axios';
         async beforeMount(){
            this.prod = await axios.get('https://dummyjson.com/products/category/smartphones')
            .then((response)=>{
-            this.res = response.data;
-            this.products = this.res.products;
+            this.products = response.data.products;
         })
            .catch(err=>console.log(err));
         },
