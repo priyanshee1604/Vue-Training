@@ -1,14 +1,17 @@
 <template>
   <RegistrationPage/>
+  <Interceptor/>
 </template>
 
 <script>
 
+import Interceptor from './components/Interceptor.vue';
 import RegistrationPage from './components/RegistrationPage.vue';
 export default {
   name: 'App',
   components: {
-    RegistrationPage
+    RegistrationPage,
+    Interceptor
   }
 }
 </script>
