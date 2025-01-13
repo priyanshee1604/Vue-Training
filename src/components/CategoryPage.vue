@@ -62,13 +62,12 @@ import axios from 'axios';
             }
         },
         filterByBrand() {
+            console.log('filterbybrand');
             console.log(this.selectedBrand);
             this.products = this.products.filter(product => {
              return product.brand === this.selectedBrand;
-        });
-}
-        
-
+            });
+        }
     }
 }
 
