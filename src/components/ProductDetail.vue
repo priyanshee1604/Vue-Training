@@ -9,12 +9,14 @@
         <img :src="product.images[0]" />
       </div>
       <p v-else>No Product found :c</p>
+     <button @click="addToCart(product.id)">Add to Cart</button>
+     
     </div>
   </template>
   
   <script>
   import axios from 'axios';
-  
+  import {  mapActions } from 'vuex';
   export default {
     data() {
       return {
@@ -28,7 +30,10 @@
             this.product = response.data;
         })
            .catch(err=>console.log(err));
-        },
+    },
+    computed:{
+        ...mapActions(['addToCart'])
+    }
   };
   </script>
   
