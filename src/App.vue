@@ -1,4 +1,6 @@
+
 <template>
+  <ChangeLocale/>
   <RegistrationPage/>
   <Interceptor/>
 </template>
@@ -7,11 +9,13 @@
 
 import Interceptor from './components/Interceptor.vue';
 import RegistrationPage from './components/RegistrationPage.vue';
+import ChangeLocale from './components/ChangeLocale.vue';
 export default {
   name: 'App',
   components: {
     RegistrationPage,
-    Interceptor
+    Interceptor,
+    ChangeLocale
   }
 }
 </script>
