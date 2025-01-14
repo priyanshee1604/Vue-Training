@@ -25,13 +25,18 @@
 
     <div>Products according to the category.</div>
     <ol>
-        <li v-for="product in products" v-bind:key="product.id">{{ product }}</li>
+        <li v-for="product in products" v-bind:key="product.id">
+            {{ product.title }} - ${{ product.price }}
+        <button @click="addToCart(product.title)">Add to Cart</button>
+        </li>
     </ol>
     
 </template>
 
 <script>
 import axios from 'axios';
+import { mapActions } from "vuex";
+
     export default{
         data(){
             return{
@@ -52,6 +57,7 @@ import axios from 'axios';
         },
 
         methods:{
+            ...mapActions(["addToCart"]),
             sortingProduct(){
                 if(this.sortby=='price')
             {
@@ -63,6 +69,7 @@ import axios from 'axios';
         },
         filterByBrand() {
             console.log(this.selectedBrand);
+            this.products = [...this.res.products];
             this.products = this.products.filter(product => {
              return product.brand === this.selectedBrand;
         });

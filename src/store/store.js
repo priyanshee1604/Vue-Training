@@ -4,24 +4,24 @@ const store = createStore ({
         cart:{}
     },
     mutations:{
-        add_To_Cart(state, productId) {
-            const id = String(productId); 
-      
-            if (state.cart[id]) {
-              state.cart[id]++;
+        add_To_Cart(state, productTitle) {
+            const title = String(productTitle); 
+            alert(`${title} added to cart`);
+            if (state.cart[title]) {
+              state.cart[title]++;
             } else {
-              state.cart[id] = 1;
+              state.cart[title] = 1;
             }
           }
     },
     actions: {
-        addToCart({ commit }, id) {
-          commit('add_To_Cart', id);
+        addToCart({ commit }, productTitle) {
+          commit('add_To_Cart', productTitle);
         },
     },
     getters: {
-        cartItems() {
-          return this.state.cart;
+        cartItems(state) {
+          return state.cart;
         }
       }
 });
