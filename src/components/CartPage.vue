@@ -3,7 +3,7 @@
     <p>Cart</p>
     <ul>
       <li v-for="(count, productId) in cartItems" :key="productId">
-        Product ID: {{ productId }} -- Count: {{ count }}
+        Product: {{ productId }} -- Count: {{ count }}
       </li>
     </ul>
   </div>

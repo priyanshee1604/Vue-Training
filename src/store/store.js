@@ -14,11 +14,6 @@ const store = createStore ({
             }
           }
     },
-    actions: {
-        addToCart({ commit }, productTitle) {
-          commit('add_To_Cart', productTitle);
-        },
-    },
     getters: {
         cartItems(state) {
           return state.cart;
