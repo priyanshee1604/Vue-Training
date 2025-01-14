@@ -5,7 +5,8 @@
 
  <!-- Add features to sort and filter out products based upon price, color or any other field on the category page -->
 <template>
-
+<div>
+    
     <p>Sort Products:</p>
     <select v-model="sortby" @change="sortingProduct">
         <option value="price">Price</option>
@@ -22,7 +23,6 @@
     <input type="radio" name="brand" value="Oppo" v-model="selectedBrand" @change="filterByBrand">Oppo
     <br><br>
 
-
     <div>Products according to the category.</div>
     <ol>
         <li v-for="product in products" v-bind:key="product.id">
@@ -30,7 +30,8 @@
         <button @click="addToCart(product.title)">Add to Cart</button>
         </li>
     </ol>
-    
+
+</div>
 </template>
 
 <script>
