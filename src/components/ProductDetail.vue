@@ -15,9 +15,9 @@
   </template>
   
   <script>
-  // import axios from 'axios';
+  import axios from 'axios';
   import {  mapActions } from 'vuex';
-  import cachedaxios from './caching';
+  // import cache from './caching';
   export default {
     data() {
       return {
@@ -26,12 +26,10 @@
     },
     props: ['id'],
     async created() {
-           this.prod = await cachedaxios.get(`https://dummyjson.com/products/${this.id}`)
+           this.prod = await axios.get(`https://dummyjson.com/products/${this.id}`)
            .then((response)=>{
             this.product = response.data;
             console.log(response);
-            console.log(cachedaxios);
-            
         })
            .catch(err=>console.log(err));
     },

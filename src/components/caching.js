@@ -1,13 +1,8 @@
-import axios from 'axios';
-import cacheaxios from 'axios-cache-plugin';
+import axios from "axios";
+import { setupCache } from "axios-cache-interceptor";
 
-const cachedaxios = cacheaxios(axios,{
-    maxCacheSize: 5,
-    ttl: 60000,
-    debug: true
+const cachedAxios = setupCache(axios, {
+    ttl:2 * 60 * 1000
 });
 
-cachedaxios.__addFilter(/\/product\/\d+/);
-
-
-export default cachedaxios;
+export  default cachedAxios;

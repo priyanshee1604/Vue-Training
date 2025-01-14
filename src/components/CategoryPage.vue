@@ -30,7 +30,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
+import cachedAxios from './caching';
     export default{
         data(){
             return{
@@ -42,8 +43,9 @@ import axios from 'axios';
         },
 
         async beforeMount(){
-           this.prod = await axios.get('https://dummyjson.com/products/category/smartphones')
+           this.prod = await cachedAxios.get('https://dummyjson.com/products/category/smartphones')
            .then((response)=>{
+            console.log(response);
             this.res = response.data;
             this.products = this.res.products;
         })
